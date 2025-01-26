@@ -13,6 +13,7 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
 
+
   const ProfileHeader = ({ navigation }) => (
     <View style={styles.header}>
       <View style={styles.emptyLeft}></View> {/* Empty left side */}

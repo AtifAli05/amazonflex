@@ -13,7 +13,6 @@ const UserProfileScreen = ({ navigation }) => {
             </View>
         );
     }
-
     return (
         // <View style={styles.container}>
         <ImageBackground

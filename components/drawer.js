@@ -6,6 +6,7 @@ const { width } = Dimensions.get('window');
 
 const DrawerContent = ({ navigation }) => {
 
+
     const { userData } = useContext(UserContext);
 
     return (

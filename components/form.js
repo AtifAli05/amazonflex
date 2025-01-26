@@ -98,6 +98,7 @@ const UserInputForm = () => {
     );
 };
 
+
 const styles = StyleSheet.create({
     background: {
         flex: 1,

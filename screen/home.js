@@ -3,11 +3,12 @@ import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const HomePage = ({ navigation }) => {
-      const [isOpen, setIsOpen] = useState(false);
-    
-      const toggleDrawer = () => {
-        setIsOpen(!isOpen);
-      };
+  const [isOpen, setIsOpen] = useState(false);
+
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <View style={styles.container}>
       {/* <View style={styles.header}>
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: 16,
-    paddingTop:30,
+    paddingTop: 30,
     paddingHorizontal: 16,
   },
   headerButton: {
