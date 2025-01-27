@@ -16,11 +16,13 @@ const App = () => {
 
   const ProfileHeader = ({ navigation }) => (
     <View style={styles.header}>
-      <View style={styles.emptyLeft}></View> {/* Empty left side */}
-      <Image
-        source={require('./assets/a.png')} // Update the path to your logo
-        style={styles.logo}
-      />
+      <View style={styles.emptyLeft} />
+      <View style={styles.logoContainer}>
+        <Image
+          source={require('./assets/a.png')}
+          style={styles.logo}
+        />
+      </View>
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <AntDesign name="down" size={24} color="white" />
       </TouchableOpacity>

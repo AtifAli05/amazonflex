@@ -8,12 +8,13 @@ const DrawerContent = ({ navigation }) => {
 
 
     const { userData } = useContext(UserContext);
+    console.log(userData.image);
 
     return (
         <View style={[styles.drawerContainer, { width: width * 0.8 }]}>
             <TouchableOpacity style={styles.profileSection} onPress={() => navigation.navigate('Profile')}>
                 <Image
-                    source={userData.image ? { uri: userData.image } : require('../assets/icon.png')}
+                    source={userData.image?.uri ? { uri: userData.image.uri } : require('../assets/icon.png')}
                     style={styles.profileImage}
                 />
                 <Text style={styles.profileName}>{userData.name || 'Your Name'}</Text>

@@ -14,17 +14,16 @@ const UserProfileScreen = ({ navigation }) => {
         );
     }
     return (
-        // <View style={styles.container}>
         <ImageBackground
-            source={require('../assets/cc.png')} style={styles.background}
+            source={require('../assets/cc.png')}
+            style={styles.background}
             resizeMode="cover"
         >
-            {/* Header with Amazon logo and arrow */}
-            <Image source={{ uri: userData.image }} style={styles.profileImage} />
-            <Text style={styles.name}>{userData.name}</Text>
-            <Text style={styles.status}>ON DUTY</Text>
-            <Text style={styles.date}>
-                {`${new Date().toLocaleDateString('en-US', {
+            <View style={styles.contentContainer}>
+                <Image source={{ uri: userData?.image?.uri }} style={styles.profileImage} />
+                <Text style={styles.name}>{userData?.name}</Text>
+                <Text style={styles.status}>ON DUTY</Text>
+                <Text style={styles.date}>{`${new Date().toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
                     year: 'numeric',
@@ -33,13 +32,12 @@ const UserProfileScreen = ({ navigation }) => {
                     minute: 'numeric',
                     hour12: true,
                 })}`}
-            </Text>
-            <TouchableOpacity style={styles.itineraryButton}>
-                <Text style={styles.itineraryText}>TODAY'S ITINERARY</Text>
-                <AntDesign name="right" size={18} color="black" />
-
-            </TouchableOpacity>
-
+                </Text>
+                <TouchableOpacity style={styles.itineraryButton}>
+                    <Text style={styles.itineraryText}>TODAY'S ITINERARY</Text>
+                    <AntDesign name="right" size={18} color="black" />
+                </TouchableOpacity>
+            </View>
         </ImageBackground>
     );
 };
@@ -47,29 +45,11 @@ const UserProfileScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
+    },
+    contentContainer: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#fff',
-    },
-
-    header: {
-        width: '100%',
-        paddingTop: 10,  // Adjust as necessary for your header height
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#ff6c00',
-        paddingHorizontal: 20,
-        paddingBottom: 10,
-        marginTop: '10%',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-    },
-
-    logo: {
-        width: 80,  // Adjust logo size
-        height: 30,  // Adjust logo size
-        resizeMode: 'contain',
+        backgroundColor: 'transparent',
     },
     profileImage: {
         width: 350,
@@ -89,9 +69,6 @@ const styles = StyleSheet.create({
     status: {
         backgroundColor: '#ff6c00',
         color: '#fff',
-        // paddingVertical: 4,
-        // paddingHorizontal: 12,
-        // borderRadius: 4,
         fontSize: 14,
         marginBottom: 8,
     },
@@ -104,18 +81,15 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingVertical: 15,
         backgroundColor: '#fff',
-        // borderRadius: 10,
-        alignItems: 'left',
+        alignItems: 'center',
         borderColor: '#ddd',
         borderWidth: 1,
         paddingHorizontal: 20,
-        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
     itineraryText: {
         fontSize: 16,
-        // fontWeight: 'bold',
         color: '#333',
     },
     errorText: {
@@ -126,4 +100,3 @@ const styles = StyleSheet.create({
 });
 
 export default UserProfileScreen;
-
